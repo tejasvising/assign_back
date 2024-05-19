@@ -52,7 +52,7 @@ app.post('/', upload.single('file'), (req, res, next) => {
             var cnt=0;
           
             
-            const here=db.collection("data").find({email: obj.email}, function(err, result) {
+            const here=db.collection("data").find({email: obj.email}, function(err, result) { //to check if this email already exists, if yes it would be an unsuccessful attempt to add data
                 if(err){
                     console.log(err);
                     
